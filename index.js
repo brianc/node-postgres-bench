@@ -1,8 +1,4 @@
 var async = require('async')
-var old = require('pg-old')
-var current = require('pg')
-
-
 var loops = 100
 
 var setup = function(client, cb) {
@@ -37,12 +33,15 @@ var bench = function(name, client, cb) {
   })
 }
 
+var old = require('pg@3.4.5')
+var current = require('pg')
+
 var benches = [
-  ['old-native', old.native.Client],
-  ['new-native', current.native.Client],
-  ['old-pure  ', old.Client],
-  ['new-pure  ', current.Client],
-  ['pg-native ', require('pg-native')]
+  ['3.4.5 - native   ', old.native.Client],
+  ['3.4.5 - pure js  ', old.Client],
+  ['current - native ', current.native.Client],
+  ['current - pure js', current.Client],
+  ['pg-native (raw)  ', require('pg-native')]
 ]
 
 var go = function(_, cb) {
