@@ -1,0 +1,17 @@
+{
+  "name": "node-postgres-bench",
+  "version": "1.0.0",
+  "description": "",
+  "main": "native.js",
+  "dependencies": {
+    "async": "^0.9.0",
+    "pg": "4.0.0-beta2",
+    "pg-native": "*"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
